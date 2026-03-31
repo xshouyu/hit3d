@@ -1,0 +1,19 @@
+# Fortran 编译中间文件
+source/*.o
+source/*.mod
+source/hit3d.x
+
+# 运行输出文件
+run/
+*.gp
+*.64.*
+*.r4.*
+stat1.gp
+stat2.gp
+es.gp
+es_sc*.gp
+sc_stat*.gp
+
+# 日志
+*.log
+out.*
