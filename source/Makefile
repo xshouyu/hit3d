@@ -51,14 +51,10 @@ ifeq ($(HOSTNAME), glacial.stanford.edu)
 
 endif
 
-# sparrow.stanford.edu, Mac OS X box
-ifeq ($(HOSTNAME), sparrow.stanford.edu)
-        MPIF90 = mpif90
-        FCFLAGS = -fdefault-real-8 -fdefault-integer-8 -finit-integer=0 -finit-real=zero -c 
-        FCFLAGS_F77 = -ffixed-form -ffixed-line-length-none
-        FCFLAGS_F90 = -ffree-form -ffree-line-length-none
-        LDFLAGS = -fdefault-real-8 -fdefault-integer-8 -finit-integer=0 -finit-real=zero -lmpi -lmpi -lfftw3 -lm
-endif
+MPIF90 = mpif90
+FCFLAGS = -O3 -c -fallow-argument-mismatch -I/usr/include
+LDFLAGS = -O3 -L/usr/lib/x86_64-linux-gnu -lfftw3 -lm
+FCFLAGS_F77 = -ffixed-form -ffixed-line-length-none
 
 # Program name
 PROG    = hit3d.x
